@@ -7,18 +7,18 @@ import java.util.Map;
 
 public class Count {
 
-    private Map<ProductVO, Integer> productAndTotal;
+    private Map<ProductVO, Integer> productQuantity;
 
     public Count() {
-        this.productAndTotal = new HashMap<>();
+        this.productQuantity = new HashMap<>();
     }
 
     public void addProduct(ProductVO product) {
-        int count = productAndTotal.getOrDefault(product, 0);
-        productAndTotal.put(product, count + 1);
+        int count = productQuantity.getOrDefault(product, 0);
+        productQuantity.put(product, count + 1);
     }
 
-    public Map<ProductVO, Integer> getProductAndTotal() {
-        return productAndTotal;
+    public Map<ProductVO, Integer> getProductQuantity() {
+        return productQuantity;
     }
 }

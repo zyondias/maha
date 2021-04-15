@@ -16,8 +16,8 @@ public class CountTest {
         count.addProduct(rolex);
         count.addProduct(dummont);
         count.addProduct(rolex);
-        int rolexCount = count.getProductAndTotal().get(rolex);
-        int dummontCount = count.getProductAndTotal().get(dummont);
+        int rolexCount = count.getProductQuantity().get(rolex);
+        int dummontCount = count.getProductQuantity().get(dummont);
 
         Assert.assertEquals(2, rolexCount);
         Assert.assertEquals(1, dummontCount);
@@ -27,6 +27,6 @@ public class CountTest {
     public void shouldReturnEmptyMapWhenIDoNotAddAnyProduct() {
         Count count = new Count();
 
-        Assert.assertNotNull(count.getProductAndTotal());
+        Assert.assertNotNull(count.getProductQuantity());
     }
 }
