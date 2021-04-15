@@ -7,8 +7,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Arrays;
-
 @RestController
 public class CheckoutController {
 
@@ -17,9 +15,6 @@ public class CheckoutController {
 
     @PostMapping("/checkout")
     public ResponseVO checkout(@RequestBody String[] productsIds) {
-
-        Arrays.stream(productsIds).forEach(System.out::println);
-
         return checkoutManager.process(productsIds);
     }
 }
