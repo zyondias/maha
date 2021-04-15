@@ -14,8 +14,10 @@ public class Count {
     }
 
     public void addProduct(ProductVO product) {
-        int count = productQuantity.getOrDefault(product, 0);
-        productQuantity.put(product, count + 1);
+        if (product != null) {
+            int count = productQuantity.getOrDefault(product, 0);
+            productQuantity.put(product, count + 1);
+        }
     }
 
     public Map<ProductVO, Integer> getProductQuantity() {

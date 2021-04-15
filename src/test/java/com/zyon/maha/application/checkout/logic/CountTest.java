@@ -29,4 +29,21 @@ public class CountTest {
 
         Assert.assertNotNull(count.getProductQuantity());
     }
+
+    @Test
+    public void shouldIgnoreNullValues(){
+        Count count = new Count();
+
+        count.addProduct(rolex);
+        count.addProduct(null);
+        count.addProduct(dummont);
+        count.addProduct(rolex);
+
+        int rolexCount = count.getProductQuantity().get(rolex);
+        int dummontCount = count.getProductQuantity().get(dummont);
+
+        Assert.assertEquals(2, rolexCount);
+        Assert.assertEquals(1, dummontCount);
+        Assert.assertNull(count.getProductQuantity().get(null));
+    }
 }
